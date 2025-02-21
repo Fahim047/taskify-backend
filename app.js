@@ -5,7 +5,7 @@ const app = express();
 
 app.use(
 	cors({
-		origin: ['http://localhost:5173'],
+		origin: ['http://localhost:5173', 'https://taskify-fahim047.vercel.app'],
 		credentials: true,
 	})
 );
@@ -23,7 +23,9 @@ app.get('/', (req, res) => {
 });
 
 // import Routers
+import taskRouter from './routes/task.routes.js';
 import userRouter from './routes/user.routes.js';
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/tasks', taskRouter);
 
 export default app;
