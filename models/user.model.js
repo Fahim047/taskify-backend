@@ -15,14 +15,6 @@ const UserSchema = new mongoose.Schema(
 			type: String,
 			default: 'https://placeholder.com/150',
 		},
-		password: {
-			type: String,
-		},
-		role: {
-			type: String,
-			enum: ['student', 'teacher', 'admin'],
-			default: 'student',
-		},
 	},
 	{ timestamps: true }
 );
