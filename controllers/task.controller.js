@@ -35,3 +35,8 @@ export const reorderTasks = asyncHandler(async (req, res) => {
 	await Task.bulkWrite(bulkOps);
 	return res.status(200).json({ message: 'Tasks reordered' });
 });
+export const deleteTask = asyncHandler(async (req, res) => {
+	const { id } = req.params;
+	await Task.findByIdAndDelete(id);
+	return res.status(200).json({ message: 'Task deleted' });
+});

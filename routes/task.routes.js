@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import {
 	createTask,
+	deleteTask,
 	getTasks,
 	reorderTasks,
 	updateTask,
@@ -10,6 +11,6 @@ const taskRouter = Router();
 
 taskRouter.route('/').post(createTask).get(getTasks);
 taskRouter.route('/reorder').patch(reorderTasks);
-taskRouter.route('/:id').patch(updateTask);
+taskRouter.route('/:id').patch(updateTask).delete(deleteTask);
 
 export default taskRouter;
